@@ -1,0 +1,37 @@
+Lets say you're trying to solve a 500-piece jigsaw puzzle
+Each piece is numbered 1 through 500 and connects at most at two places, not counting pieces 1 and 500. For example, piece 2 would connect on the left to piece 1 and piece 3 on the right. 
+
+The normal way to solve a jigsaw puzzle is by gathering and putting together pieces based on the picture printed on them. You focus on pieces that make up a distinct landmark in the puzzle and maybe once that section gets a couple pieces to its radius, you move on to try build a different section. 
+
+Now, that takes some minuscule amount of patience and resilience to the unending kaleidoscoping chaos of jumbled puzzle pieces that I for one am not equipped with, so a different method must be invented. 
+
+While all the pieces are scrambled in a pool, pick up two at random. If the pieces have connecting sides, put them together to create a bigger piece. Place the new piece back in the pool and pick two new pieces again at random. If the two pieces do not go together, place them both back in the pool. 
+
+Using this method, how many steps would it take to connect all the pieces from 1 to 500 and complete the puzzle?
+
+
+steps_taken = 0
+
+###
+Only need to keep track of numbers that are not connected, aka if you have a string from 50 - 54, you don't need to keep track of numbers 51-53 because there are no more connected sides. While holding that piece consider one the numbers on the outside, 50 and 54 and if that can be connected by the other piece.
+
+When you have two pieces, 50-54(p1) and 4(p2). There are a couple ways you can check. (Our job is to find the best way)
+
+Take p1: the end pieces are 50 and 54. 
+50 is already connected on the right so the only open connecting side is on the left, number 49.
+54 is similar but on the the left, with the only open connecting side on the right, number 55.
+
+So our connecting options are the tiles 49 or 55. 
+
+#things to keep in mind, when you pick a piece you can't choose the same piece for p1 and p2
+	this asks the question, how are we going to keep track of the numbers.
+	if random number chosen is in list of numbers, roll again.
+	actually we have to design this well because as we get near the end it will take a long time to find the last piece we need, we keep getting ones that we already have
+
+###Or a cool thing would to keep track of the original piece that was found. Aka 50-54 -> 52 was in the middle and was added to the sides.
+
+
+###Keep track of on which step something happened. Eg the first pieces connected at step 543, the second 10000, the third 11020, the fourth 15320 eg. This can be put later in an excel sheet or whatever 
+
+###sample program to detect first step. Just find choose two numbers at random and see if they go together. 
+
