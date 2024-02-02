@@ -1,5 +1,3 @@
-This is just a test but I need to make some changes here
-
 Lets say you're trying to solve a 500-piece jigsaw puzzle
 Each piece is numbered 1 through 500 and connects at most at two places, not counting pieces 1 and 500. For example, piece 2 would connect on the left to piece 1 and piece 3 on the right. 
 
