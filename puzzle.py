@@ -4,6 +4,8 @@ def connectPieces(piecesConnected, piece1, piece2):
   piecesConnected[piece1] = True
   piecesConnected[piece2] = True
 
+
+
 def main():
   solved = False
   steps = 0
@@ -20,10 +22,14 @@ def main():
     while piece2 == piece1:
       piece2 = random.randint(1,numberOfPieces)
       print("piece 2 changed")
+  
+
+    if abs(piece1 - piece2) == 1:
+      connectPieces(piece1, piece2)
+
+    
 
 
-    if piecesConnected[piece1] == True and piecesConnected[piece2] == True:
-      print()
     #Find the connecting numbers on piece 1 and 2, and then do mathematical comparissons on those it would be much easier
     
     #If piece 1 and 2 are connected, compare which one is the higher number, and sort through there. 
@@ -61,7 +67,7 @@ def main():
       print(piecesConnected[piece1])
       print(piecesConnected[piece2])
 
-      solved = True
+    solved = True
     print('This is the number of steps', steps)
 
     steps += 1
