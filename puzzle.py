@@ -27,17 +27,7 @@ def main():
     if abs(piece1 - piece2) == 1:
       connectPieces(piece1, piece2)
 
-    
-
-
-    #Find the connecting numbers on piece 1 and 2, and then do mathematical comparissons on those it would be much easier
-    
-    #If piece 1 and 2 are connected, compare which one is the higher number, and sort through there. 
-    # if (piecesConnected[piece1] == True and piecesConnected[piece2] == True):
-    #   if piecesConnected[piece1] > piecesConnected[piece2]:
-    #     print()
-    #   else:
-    #     print()
+    # [1, 3, 4]
 
     if (piece1 == (piece2 + 1)) or (piece1 == (piece2 - 1)):
       print('pieces can connect')
